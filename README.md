@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Human body measurement using computer vision/ 3D modeling
+Anthropometric measurement extraction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![alt text](https://github.com/farazBhatti/Human-Body-Measurements-using-Computer-Vision/blob/master/sample_data/input/image_1_50.png)
 
-## Available Scripts
 
-In the project directory, you can run:
+Getting human body measurements from image is a very hard problem. This repository contains the source code and related files for a system that uses computer vision and 3D modeling techniques to accurately measure various body parts of a human subject.
 
-### `npm start`
+The system is built on top of the OpenCV and Tensorflow libraries, which provide powerful tools for image processing, feature detection, and 3D reconstruction. It takes single image as input of a human subject and extracts key points. These key points are then used to build a 3D model of the subject, which can be used to precisely measure different body parts such as arm length, waist circumference, and hip width.
+This repository provides a starting solution for any one who is working in this domain. All meausrements are in centimeters. 3D reconstruction is done using [HMR](https://github.com/akanazawa/hmr). Tested on tensorflow==1.13.1.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![alt text](https://github.com/farazBhatti/Human-Body-Measurements-using-Computer-Vision/blob/master/sample_data/input/Screenshot%20from%202021-01-27%2014-34-16.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![alt text](https://github.com/farazBhatti/Human-Body-Measurements-using-Computer-Vision/blob/master/sample_data/input/Screenshot%20from%202023-03-28%2020-12-31.png)
 
-### `npm test`
+###  Download pre-trained model
+Type the following command on the terminal to download pre-trained model
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`wget https://people.eecs.berkeley.edu/~kanazawa/cachedir/hmr/models.tar.gz && tar -xf models.tar.gz`
 
-### `npm run build`
+and save it in 'models' folder.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### CustomBodyPoints
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Download [CustomBodyPoints](https://github.com/farazBhatti/Human-Body-Measurements-using-Computer-Vision/files/5886235/customBodyPoints.txt) text file and place it in the data folder.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Install Packages
 
-### `npm run eject`
+   `pip install -r requirements.txt`
+   or
+   `pip3 install -r requirements.txt`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Jupyter NoteBook / Quick Demo 
+A Jupyter notebook has been added and updated for those who quickly want to get inference without much hassle. Simply change the path to your input image.
+Thanks to [Hamza Khalil](https://github.com/hamzakhalil798) for adding this notebook.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Inference
+`python3 inference.py -i <path to Image1> -ht <height in cm>`
+ 
+## My LinkedIn
+[FarazBhatti](https://www.linkedin.com/in/farazahmadbhatti/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Acknowledgment
+[HMR](https://github.com/akanazawa/hmr)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+[Remove_background](https://github.com/farazBhatti/bg_remove_GUI)
 
-## Learn More
+[Deep lab v3 +](https://github.com/rishizek/tensorflow-deeplab-v3)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Humanbody shape](https://github.com/1900zyh/3D-Human-Body-Shape)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
