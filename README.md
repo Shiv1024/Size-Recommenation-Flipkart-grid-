@@ -97,10 +97,18 @@ The project uses a body measurement dataset containing the following features:
 
 Clusters generated from k-means are labeled using external brand size charts.
 
+## Pre-trained Model
+The image analysis functionality in this project uses a pre-trained OpenCV-TensorFlow model from [this repository](https://github.com/farazBhatti/Human-Body-Measurements-using-Computer-Vision/tree/master). This model extracts dimensions such as height, waist, bust, and hips from uploaded images.
+
 ## Future Enhancements
 - Real-time feedback loop to improve clustering accuracy.
 - Support for additional garment types.
 - Enhanced privacy measures for uploaded images.
-  
+
+## Acknowledgements
+- OpenCV and TensorFlow communities for pre-trained models.
+- [Faraz Bhatti's Repository](https://github.com/farazBhatti/Human-Body-Measurements-using-Computer-Vision/tree/master) for the pre-trained model.
+- Popular apparel brands for size chart references.
+
 Feel free to contribute or raise issues to improve the project!
 
